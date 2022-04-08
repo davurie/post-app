@@ -1,0 +1,64 @@
+@import "styles/colors";
+
+
+@mixin font-icon-color($font, $icon) {
+    .card__text {
+        color: $font;
+    }
+
+    .mat-icon {
+        color: $icon;
+    }
+}
+
+
+.card {
+    border-style: solid;
+    // border-color: #e0e0e065;
+    border-radius: 4px;
+    border-width: 0px;
+    box-shadow: 1px 1px 3px 1px rgb(26 23 24 / 42%);
+    user-select: none;
+    transition: all 0.1s ease;
+    color: $foregroundColor;
+
+    &__text {
+        font-size: 1.4em;
+
+        &--liked {
+            font-size: 2em;
+        }
+    }
+
+    &:hover {
+        cursor: pointer;
+        border-color: $primaryShade1;
+        border-width: 6px;
+
+        @include font-icon-color($primaryShade1, $primaryShade1);
+    }
+
+    &:active {
+        background-color: $primaryShade1;
+        border-width: 2px;
+        color: $foregroundColor;
+
+        @include font-icon-color($foregroundColor, $foregroundColor);
+    }
+
+    &--liked {
+        border-color: $primaryShade1;
+        background-color: $primaryShade1;
+
+        &:hover {
+            @include font-icon-color($foregroundColor, $foregroundColor);
+        }
+    }
+}
+
+.mat-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0.3em;
+}

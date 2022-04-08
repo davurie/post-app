@@ -1,0 +1,13 @@
+@import "app/styles/_colors.scss";
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif !important;
+    padding: 1em;
+    background: $backgroundColor;
+    color: $foregroundColor;
+}
