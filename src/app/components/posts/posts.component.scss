@@ -1,0 +1,65 @@
+@import "../../styles/colors";
+
+
+@mixin font-icon-color($font, $icon) {
+    .card__text {
+        color: $font;
+    }
+
+    .mat-icon {
+        color: $icon;
+    }
+}
+
+.card {
+    border-radius: 4px;
+    box-shadow: 1px 1px 3px 1px var(--primaryShadow);
+    user-select: none;
+    transition: all 0.1s ease;
+    color: var(--foregroundColor);
+
+    &:hover {
+        cursor: pointer;
+        border-color: var(--primaryColor);
+        background-color: var(--primaryColor);
+        transform: scale(1.08);
+
+        @include font-icon-color(var(--foregroundColor), var(--foregroundColor));
+    }
+
+    &:active {
+        background-color: var(--primaryColor);
+        color: var(--foregroundColor);
+        transform: scale(1);
+
+        @include font-icon-color(var(--foregroundColor), var(--foregroundColor));
+    }
+
+    &--liked {
+        border-color: var(--primaryColor);
+        background-color: var(--primaryColor);
+
+        &:hover {
+            @include font-icon-color(var(--foregroundColor), var(--foregroundColor));
+        }
+    }
+
+    &__text {
+        font-size: 1.4em;
+
+        &--liked {
+            font-size: 2em;
+        }
+    }
+}
+
+mat-grid-list {
+    margin: 2em 1em 0em 1em;
+}
+
+.mat-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0.3em;
+}

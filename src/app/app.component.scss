@@ -1,64 +1,41 @@
-@import "styles/colors";
+mat-toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    box-shadow: 0 3px 5px -1px #0003, 0 6px 10px #00000024, 0 1px 18px #0000001f;
+    background-color: var(--backgroundColor);
+    color: var(--primaryColor);
+    font-family: 'Barriecito', cursive;
+    font-size: 40px;
 
-
-@mixin font-icon-color($font, $icon) {
-    .card__text {
-        color: $font;
-    }
-
-    .mat-icon {
-        color: $icon;
-    }
 }
 
+mat-toolbar ul {
+    display: flex;
+    list-style: none;
+    text-align: center;
+    vertical-align: baseline;
 
-.card {
-    border-style: solid;
-    // border-color: #e0e0e065;
-    border-radius: 4px;
-    border-width: 0px;
-    box-shadow: 1px 1px 3px 1px rgb(26 23 24 / 42%);
-    user-select: none;
-    transition: all 0.1s ease;
-    color: $foregroundColor;
-
-    &__text {
-        font-size: 1.4em;
-
-        &--liked {
-            font-size: 2em;
-        }
-    }
-
-    &:hover {
+    li {
+        background: rgba(0, 0, 0, 0.05);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin: 0 3px;
+        color: var(--foregroundColor);
+        transition: 0.1s ease;
         cursor: pointer;
-        border-color: $primaryShade1;
-        border-width: 6px;
-
-        @include font-icon-color($primaryShade1, $primaryShade1);
-    }
-
-    &:active {
-        background-color: $primaryShade1;
-        border-width: 2px;
-        color: $foregroundColor;
-
-        @include font-icon-color($foregroundColor, $foregroundColor);
-    }
-
-    &--liked {
-        border-color: $primaryShade1;
-        background-color: $primaryShade1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         &:hover {
-            @include font-icon-color($foregroundColor, $foregroundColor);
+            color: var(--primaryColor);
+            background: var(--secondaryColor);
         }
     }
 }
 
-.mat-icon {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 0.3em;
+.example-spacer {
+    flex: 1 1 auto;
 }

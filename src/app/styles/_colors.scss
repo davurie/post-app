@@ -1,5 +1,15 @@
-$foregroundColor: #e3f2fd;
-$backgroundColor: #2a313b;
-$secondaryColor: #323da5;
-$primaryShade1: #fba3c4;
-$primaryShade2: #fba3c48e;
+:root {
+    --foregroundColor: #e3f2fd;
+    --backgroundColor: #2a313b;
+    --primaryColor: #fba3c4;
+    --secondaryColor: #323da5;
+    --primaryShadow: rgb(26 23 24 / 42%);
+}
+
+body.light-theme {
+    --foregroundColor: #2a313b;
+    --backgroundColor: #e3f2fd;
+    --primaryColor: #4fc3f7;
+    --secondaryColor: #9575cd;
+    --primaryShadow: rgb(165 165 165 / 42%);
+}

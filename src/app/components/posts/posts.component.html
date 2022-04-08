@@ -1,3 +1,9 @@
-<p>
-  posts works!
-</p>
+<mat-grid-list cols="10" rowspan="10" gutterSize="20">
+  <mat-grid-tile *ngFor="let post of posts" (click)="likePost(post)" tabindex="0"
+    [ngClass]="!post.liked ? 'card' : 'card card--liked'">
+    <mat-icon>{{switchIcon(post.liked)}}</mat-icon>
+    <div class="card__text" [ngClass]="!post.liked ? 'card__text' : 'card__text card__text--liked'">
+      {{!post.liked ? post.id : post.userId}}
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>

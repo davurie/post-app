@@ -15,7 +15,18 @@ export class AppComponent {
     postsService.getPosts().then(res => this.posts = res);
   }
 
-  likePost(post: Post): void {
-    this.posts.find((res: Post) => res.id == post.id)!.liked = !post.liked;
+  switchTheme(): void {
+    const body = document.querySelector('body');
+
+    if (body && body.classList.contains('light-theme')) {
+      body.classList.remove('light-theme')
+    } else {
+      body?.classList.add('light-theme')
+    }
   }
+
+  seeTheCode(): void {
+    window.open('https://github.com/DavidKf/post-app', '_blank');
+  }
+
 }
