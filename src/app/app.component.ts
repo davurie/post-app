@@ -26,7 +26,7 @@ export class AppComponent {
   }
 
   seeTheCode(): void {
-    window.open('https://github.com/DavidKf/post-app', '_blank');
+    window.open('https://github.com/DavidKf/post-app', '_self');
   }
 
 }

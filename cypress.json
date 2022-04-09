@@ -1,0 +1,15 @@
+{
+  "integrationFolder": "cypress/integration",
+  "supportFile": "cypress/support/index.ts",
+  "videosFolder": "cypress/videos",
+  "screenshotsFolder": "cypress/screenshots",
+  "pluginsFile": "cypress/plugins/index.ts",
+  "fixturesFolder": "cypress/fixtures",
+  "baseUrl": "http://localhost:4200",
+  "chromeWebSecurity": false,
+  "pageLoadTimeout": 30000,
+  "defaultCommandTimeOut": 30000,
+  "viewportWidth": 1260,
+  "viewportHeight": 1370,
+  "retries": 3
+}
