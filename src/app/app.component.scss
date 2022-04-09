@@ -8,6 +8,11 @@ mat-toolbar {
     font-family: 'Barriecito', cursive;
     font-size: 40px;
 
+    svg {
+        height: 40px;
+        margin-right: 10px;
+        fill: var(--primaryColor);
+    }
 }
 
 mat-toolbar ul {
