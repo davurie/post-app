@@ -10,6 +10,19 @@
 <style>@import"https://fonts.googleapis.com/css2?family=Barriecito&display=swap";.mat-typography{font:400 14px/20px Roboto,Helvetica Neue,sans-serif;letter-spacing:normal}:root{--foregroundColor:#e3f2fd;--backgroundColor:#2a313b;--primaryColor:#fba3c4;--secondaryColor:#323da5;--primaryShadow:rgb(26 23 24 / 42%)}body{font-family:Roboto,Helvetica Neue,sans-serif;margin:0;background:var(--backgroundColor);color:var(--foregroundColor);transition:all .3s ease}</style><link rel="stylesheet" href="styles.34fa242a7b98b560.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.34fa242a7b98b560.css"></noscript></head>
 
 <body class="mat-typography">
+  <script>
+    (function () {
+      // Retrieve the URL the user was trying to access when receiving the 404.
+      var redirect = sessionStorage.redirect;
+      // Remove the URL from sessionStorage.
+      delete sessionStorage.redirect;
+      // Check if we actually need to redirect.
+      if (redirect && redirect != location.href) {
+        // We need to redirect to the URL the user was trying to access.
+        history.replaceState(null, null, redirect);
+      }
+    })();
+  </script>
   <app-root></app-root>
 <script src="runtime.08eadc51ff958e73.js" type="module"></script><script src="polyfills.e0741a90086417de.js" type="module"></script><script src="main.dc1f5a331d7cb2ff.js" type="module"></script>
 
