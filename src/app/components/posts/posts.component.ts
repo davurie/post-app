@@ -14,9 +14,18 @@ export class PostsComponent {
 
   public gridSize!: number;
 
-  constructor(breakpointObserver: BreakpointObserver) {
+  constructor(private breakpointObserver: BreakpointObserver) {
+    this.deviceWatcher();
+  }
 
-    breakpointObserver.observe([
+  likePost(post: Post): void {
+    this.posts.find((res: Post) => res.id == post.id)!.liked = !post.liked;
+  }
+
+  switchIcon = (liked: boolean): string => liked ? 'favorite' : 'favorite_border';
+
+  protected deviceWatcher() {
+    this.breakpointObserver.observe([
       Breakpoints.Handset,
       Breakpoints.Tablet,
       Breakpoints.XSmall,
@@ -32,10 +41,4 @@ export class PostsComponent {
       }
     });
   }
-
-  likePost(post: Post): void {
-    this.posts.find((res: Post) => res.id == post.id)!.liked = !post.liked;
-  }
-
-  switchIcon = (liked: boolean): string => liked ? 'favorite' : 'favorite_border';
 }
