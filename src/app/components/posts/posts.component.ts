@@ -24,7 +24,7 @@ export class PostsComponent {
 
   switchIcon = (liked: boolean): string => liked ? 'favorite' : 'favorite_border';
 
-  protected deviceWatcher() {
+  protected deviceWatcher(): void {
     this.breakpointObserver.observe([
       Breakpoints.Handset,
       Breakpoints.Tablet,
