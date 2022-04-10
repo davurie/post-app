@@ -1,4 +1,4 @@
-<mat-grid-list [cols]="gridSize" rowspan="10" gutterSize="20">
+<mat-grid-list [cols]="gridSize" gutterSize="20">
   <mat-grid-tile *ngFor="let post of posts" (click)="likePost(post)" tabindex="0"
     [ngClass]="!post.liked ? 'card' : 'card card--liked'">
     <mat-icon>{{switchIcon(post.liked)}}</mat-icon>
