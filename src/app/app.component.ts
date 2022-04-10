@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { Post } from './models/posts';
-import { PostsService } from './services/posts.service';
 
 @Component({
   selector: 'app-root',
@@ -8,12 +6,6 @@ import { PostsService } from './services/posts.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  posts: Post[];
-
-  constructor(postsService: PostsService) {
-    this.posts = [];
-    postsService.getPosts().then(res => this.posts = res);
-  }
 
   switchTheme(): void {
     const body = document.querySelector('body');

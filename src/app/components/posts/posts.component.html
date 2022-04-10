@@ -1,5 +1,5 @@
 <mat-grid-list [cols]="gridSize" gutterSize="20">
-  <mat-grid-tile *ngFor="let post of posts" (click)="likePost(post)" tabindex="0"
+  <mat-grid-tile *ngFor="let post of postState.posts$ |async; trackBy: trackPosts" (click)="likePost(post)" tabindex="0"
     [ngClass]="!post.liked ? 'card' : 'card card--liked'">
     <mat-icon>{{switchIcon(post.liked)}}</mat-icon>
     <div class="card__text" [ngClass]="!post.liked ? 'card__text' : 'card__text card__text--liked'">

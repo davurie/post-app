@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -24,6 +25,7 @@ import { PostsComponent } from './components/posts/posts.component';
     MatIconModule,
     MatToolbarModule,
     NgxSkeletonLoaderModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
