@@ -12,7 +12,7 @@ export class PostsComponent {
 
   @Input() posts!: Post[];
 
-  public gridSize!: number;
+  gridSize!: number;
 
   constructor(private breakpointObserver: BreakpointObserver) {
     this.deviceWatcher();
