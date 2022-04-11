@@ -10,6 +10,7 @@ By default, show the post id, when clicking on a square: replace the id with the
 ### Features:
 - Dark and Light mode toggle
 - Shared state + cache
+- Mobile and Tablet friendly
 - 🌲 Cypress e2e tests -> run `ng e2e` (mind the invader!)
 
 Run `npm i` and wait :)
