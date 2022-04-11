@@ -1,27 +1,19 @@
-# PostApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.2.
+![post-me](https://user-images.githubusercontent.com/36332661/162650607-bfdf3695-2953-4567-b791-fddb001eebe2.png)
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Desired behaviour
+By default, show the post id, when clicking on a square: replace the id with the userId. When clicking again show the id and so on...
 
-## Code scaffolding
+[Click Here to check it out 🔥](https://davidkf.github.io/post-app/) -> RxJS version!
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Features:
+- Dark and Light mode toggle
+- Shared state + cache
+- 🌲 Cypress e2e tests -> run `ng e2e` (mind the invader!)
 
-## Build
+Run `npm i` and wait :)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
+Run `ng serve` to start the application! Then access http://localhost:4200/.
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
