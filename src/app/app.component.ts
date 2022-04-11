@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -18,7 +19,7 @@ export class AppComponent {
   }
 
   seeTheCode(): void {
-    window.open('https://github.com/DavidKf/post-app', '_self');
+    window.open('https://github.com/DavidKf/post-app', environment.production ? '_new' : '_self');
   }
 
 }
