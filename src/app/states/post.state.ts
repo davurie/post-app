@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { BehaviorSubject, map, shareReplay } from 'rxjs';
+import { BehaviorSubject, EMPTY, map, Observable, of, shareReplay } from 'rxjs';
 
 import { Post } from '../models/posts';
 import { PostsService } from '../services/posts.service';
@@ -22,13 +22,30 @@ export class PostState {
     this._posts.next(val);
   }
 
-  constructor(postsService: PostsService) {
-    postsService.getPosts().subscribe((posts: Post[]) => {
+  constructor(private postsService: PostsService) {
+    this.getPosts();
+  }
+
+  getPosts() {
+    this.getCache();
+
+    !this.posts && this.postsService.getPosts().subscribe((posts: Post[]) => {
       this.posts = posts;
+      this.setCache(this.posts);
     });
+
   }
 
   likePost(post: Post): void {
     this.posts.find((res: Post) => res.id == post.id)!.liked = !post.liked;
+    this.setCache(this.posts);
+  }
+
+  private setCache(posts: Post[]): void {
+    sessionStorage.setItem('posts', JSON.stringify(posts));
+  }
+
+  private getCache(): void {
+    this.posts = JSON.parse(sessionStorage.getItem('posts')!);
   }
 }
