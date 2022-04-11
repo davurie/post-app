@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
@@ -8,7 +9,7 @@ import { PostsComponent } from './components/posts/posts.component';
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MatGridListModule, MatIconModule, MatToolbarModule],
+      imports: [MatGridListModule, MatIconModule, MatToolbarModule, HttpClientModule],
 
       declarations: [
         AppComponent,
