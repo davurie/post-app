@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { Post } from './models/posts';
-import { PostsService } from './services/posts.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -8,12 +7,6 @@ import { PostsService } from './services/posts.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  posts: Post[];
-
-  constructor(postsService: PostsService) {
-    this.posts = [];
-    postsService.getPosts().then(res => this.posts = res);
-  }
 
   switchTheme(): void {
     const body = document.querySelector('body');
@@ -26,7 +19,7 @@ export class AppComponent {
   }
 
   seeTheCode(): void {
-    window.open('https://github.com/DavidKf/post-app', '_self');
+    window.open('https://github.com/DavidKf/post-app', environment.production ? '_new' : '_self');
   }
 
 }

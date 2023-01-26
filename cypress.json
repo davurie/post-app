@@ -9,7 +9,7 @@
   "chromeWebSecurity": false,
   "pageLoadTimeout": 30000,
   "defaultCommandTimeOut": 30000,
-  "viewportWidth": 1260,
-  "viewportHeight": 1370,
+  "viewportWidth": 1440,
+  "viewportHeight": 2560,
   "retries": 3
 }

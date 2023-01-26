@@ -5,6 +5,7 @@ import { Post } from 'src/app/models/posts';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('PostsComponent', () => {
   let component: PostsComponent;
@@ -13,7 +14,7 @@ describe('PostsComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [MatGridListModule, MatIconModule, MatToolbarModule],
+      imports: [MatGridListModule, MatIconModule, MatToolbarModule, HttpClientModule],
       declarations: [PostsComponent]
     })
       .compileComponents();
@@ -31,7 +32,7 @@ describe('PostsComponent', () => {
       liked: false
     };
 
-    component.posts = [post]
+    component.postState.posts = [post]
     fixture.detectChanges();
   });
 

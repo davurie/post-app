@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 
 import { Post } from 'src/app/models/posts';
+import { PostState } from 'src/app/states/post.state';
 
 @Component({
   selector: 'app-posts',
@@ -10,17 +11,15 @@ import { Post } from 'src/app/models/posts';
 })
 export class PostsComponent {
 
-  @Input() posts!: Post[];
-
   gridSize!: number;
 
-  constructor(private breakpointObserver: BreakpointObserver) {
+  constructor(public postState: PostState, private breakpointObserver: BreakpointObserver) {
     this.deviceWatcher();
   }
 
-  likePost(post: Post): void {
-    this.posts.find((res: Post) => res.id == post.id)!.liked = !post.liked;
-  }
+  trackPosts = (i: number, post: Post) => post.id;
+
+  likePost = (post: Post): void => this.postState.likePost(post);
 
   switchIcon = (liked: boolean): string => liked ? 'favorite' : 'favorite_border';
 
