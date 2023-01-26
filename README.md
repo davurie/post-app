@@ -5,7 +5,7 @@
 ### Desired behaviour
 By default, show the post id, when clicking on a square: replace the id with the userId. When clicking again show the id and so on...
 
-[Click Here to check it out 🔥](https://devurie.github.io/post-app/) -> RxJS version!
+[Click Here to check it out 🔥](https://davurie.github.io/post-app/) -> RxJS version!
 
 ### Features:
 - Dark and Light mode toggle
